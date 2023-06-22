@@ -19,9 +19,9 @@ export default {
     <div class="d-flex text-center card my-2 p-auto align-items-center" :class="myPokemon.type1 === 'Grass' ? 'green-bkg' : myPokemon.type1 === 'Water' ? 'blue-bkg' : myPokemon.type1 === 'Fire' ? 'red-bkg' : ''">
         <!-- Inserimento contenuti nelle card prendendo gli elementi dalla API -->
         <img class="m-3" :src="myPokemon.imageUrl" alt="pokemon.name">
-        <h6 class="mt-2 mb-1"> {{ myPokemon.number }}</h6>   
-        <h5 class="mt-2 mb-1"> {{ myPokemon.name }}</h5>
-        <h6 class="mt-2 mb-1"> {{ myPokemon.type1 }}</h6>
+        <h6> {{ myPokemon.number }}</h6>   
+        <h5> {{ myPokemon.name }}</h5>
+        <h6> {{ myPokemon.type1 }}</h6>
     </div>
 </template>
 
