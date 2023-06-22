@@ -16,7 +16,7 @@ export default {
 
 <template>
     <!-- Operatore ternario per impostare lo sfondo della card in base al tipo di pokemon -->
-    <div class="d-flex text-center card my-4 p-auto align-items-center" :class="myPokemon.type1 === 'Grass' ? 'green-bkg' : myPokemon.type1 === 'Water' ? 'blue-bkg' : myPokemon.type1 === 'Fire' ? 'red-bkg' : ''">
+    <div class="d-flex text-center card my-2 p-auto align-items-center" :class="myPokemon.type1 === 'Grass' ? 'green-bkg' : myPokemon.type1 === 'Water' ? 'blue-bkg' : myPokemon.type1 === 'Fire' ? 'red-bkg' : ''">
         <!-- Inserimento contenuti nelle card prendendo gli elementi dalla API -->
         <img class="m-3" :src="myPokemon.imageUrl" alt="pokemon.name">
         <h6 class="mt-2 mb-1"> {{ myPokemon.number }}</h6>   
@@ -48,14 +48,14 @@ export default {
 
     /* STYLE BACKGROUND */
     .green-bkg{
-        background-color: greenyellow;
+        background-color: rgba(lightgreen, 0.8);
     }
 
     .blue-bkg{
-        background-color: cornflowerblue;
+        background-color:rgba(cornflowerblue, 0.8);
     }
 
     .red-bkg{
-        background-color: rgb(247, 41, 41);
+        background-color: rgba(red, 0.8);
     }
 </style>
