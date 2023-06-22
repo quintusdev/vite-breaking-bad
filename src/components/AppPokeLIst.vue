@@ -19,8 +19,8 @@ export default {
 <template>
         <div class="container bg-secondary bg-gradient px-5 py-4">
             <div class="row d-flex justify-content-center">
-                <!-- Operatore ternario per impostare lo sfondo della card in base al tipo di pokemon -->
-                <div v-for="(pokemon, index) in store.pokeList" :key="index" class="d-flex col-6 col-md-4 col-lg-2 mx-2">
+                <!--  -->
+                <div v-for="(pokemon, index) in store.pokeList" :key="index" class="d-flex col-6 col-md-4 col-lg-2 mx-2 min">
                     <AppPokeCard :myPokemon="pokemon"/>
                 </div>
             </div>
@@ -30,6 +30,9 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
 
+    .min{
+        min-width: fit-content;
+    }
 </style>
 
 

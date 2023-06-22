@@ -15,7 +15,9 @@ export default {
 </script>
 
 <template>
-    <div class="d-flex text-center card my-4 align-items-center" :class="myPokemon.type1 === 'Grass' ? 'green-bkg' : myPokemon.type1 === 'Water' ? 'blue-bkg' : myPokemon.type1 === 'Fire' ? 'red-bkg' : ''">
+    <!-- Operatore ternario per impostare lo sfondo della card in base al tipo di pokemon -->
+    <div class="d-flex text-center card my-4 p-auto align-items-center" :class="myPokemon.type1 === 'Grass' ? 'green-bkg' : myPokemon.type1 === 'Water' ? 'blue-bkg' : myPokemon.type1 === 'Fire' ? 'red-bkg' : ''">
+        <!-- Inserimento contenuti nelle card prendendo gli elementi dalla API -->
         <img class="m-3" :src="myPokemon.imageUrl" alt="pokemon.name">
         <h6 class="mt-2 mb-1"> {{ myPokemon.number }}</h6>   
         <h5 class="mt-2 mb-1"> {{ myPokemon.name }}</h5>
