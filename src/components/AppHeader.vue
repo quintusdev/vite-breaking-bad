@@ -1,14 +1,23 @@
 <script>
-export default {
-    
-}
+/* importo lo store dal file store.js */
+import { store } from '../store.js';
 
+export default{
+    data() {
+        return {
+            store,
+        }
+    },
+}
 </script>
 
 <template>
-    <h1>provatitolo</h1>
+    <div class="container text-center">
+        <h1>{{store.titleApp}}</h1>
+    </div>
 </template>
 
 <style lang="scss" scoped>
+@use '../styles/partials/variables' as *;
 
 </style>

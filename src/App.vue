@@ -21,7 +21,8 @@ export default{
   mounted() {
     /* richiamo la funzione axios e inserisco i datiS*/
     axios.get(store.apiURL).then((response) => {
-      store.pokeList = response.data.response;
+      store.pokeList = response.data.docs;
+      console.log(store.pokeList);
     })
   },
 }
