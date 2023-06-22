@@ -15,13 +15,20 @@ export default {
 </script>
 
 <template>
-    <div class="pokemon text-center">
-        <img :src="myPokemon.imageUrl" alt="Immagine Pokemon">
-        <h4 class="mt-2 mb-4"> {{ myPokemon.name }}</h4>        
+    <div class="text-center card bg-secondary">
+        <img :src="myPokemon.imageUrl" alt="pokemon.name">
+        <h6 class="mt-2 mb-3"> {{ myPokemon.number }}</h6>   
+        <h5 class="mt-2 mb-3"> {{ myPokemon.name }}</h5>
+        <h6 class="mt-2 mb-3"> {{ myPokemon.type1 }}</h6>
     </div>
 </template>
 
 <style lang="scss" scoped>
-@use '../styles/partials/variables' as *;
-    
+    @use '../styles/partials/variables' as *;
+
+    img{
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+    }
 </style>

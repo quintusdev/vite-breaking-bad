@@ -22,20 +22,19 @@ export default{
     /* richiamo la funzione axios e inserisco i datiS*/
     axios.get(store.apiURL).then((response) => {
       store.pokeList = response.data.docs;
-      console.log(store.pokeList);
     })
   },
 }
 </script>
 
 <template>
-  <div class="container">
+  <div>
     <AppHeader />
     <AppPokeList />
   </div>
 </template>
 
-<style lang="scss" scoped>
+<style lang="scss">
   @use './styles/generals.scss' as *;
 
   

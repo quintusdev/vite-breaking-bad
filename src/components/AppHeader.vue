@@ -12,7 +12,7 @@ export default{
 </script>
 
 <template>
-    <div class="container text-center">
+    <div class="text-center">
         <h1>{{store.titleApp}}</h1>
     </div>
 </template>
