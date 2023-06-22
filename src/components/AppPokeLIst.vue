@@ -20,7 +20,7 @@ export default {
         <div class="container bg-secondary bg-gradient px-5 py-4">
             <div class="row d-flex justify-content-center">
                 <!--  -->
-                <div v-for="(pokemon, index) in store.pokeList" :key="index" class="d-flex col-6 col-md-4 col-lg-2 mx-2 min">
+                <div v-for="(pokemon, index) in store.pokeList" :key="index" class="d-flex col-6 col-md-4 col-lg-3 min">
                     <AppPokeCard :myPokemon="pokemon"/>
                 </div>
             </div>

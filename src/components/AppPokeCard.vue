@@ -36,12 +36,12 @@ export default {
     }
 
     h5{
-        font-size: 18px;
+        font-size: 20px;
         font-weight: 700;
     }
 
     h6{
-        font-size: 15px;
+        font-size: 16px;
         font-style: italic;
         font-weight: 600;
     }
