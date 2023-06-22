@@ -1,16 +1,16 @@
 <script>
 /* importo l'Axios */
 import axios from 'axios';
-
-import AppHeader from './components/AppHeader.vue';
-import AppPokeLIst from './components/AppPokeLIst.vue';
 /* importo lo store dal file store.js */
 import { store } from './store.js';
+
+import AppHeader from './components/AppHeader.vue';
+import AppPokeList from './components/AppPokeList.vue';
 
 export default{
   components:{
     AppHeader,
-    AppPokeLIst
+    AppPokeList
   },
   data() {
     return {
@@ -21,7 +21,7 @@ export default{
   mounted() {
     /* richiamo la funzione axios e inserisco i datiS*/
     axios.get(store.apiURL).then((response) => {
-      store.pokeList = response.data.response
+      store.pokeList = response.data.response;
     })
   },
 }
@@ -30,7 +30,7 @@ export default{
 <template>
   <div class="container">
     <AppHeader />
-    <AppMain />
+    <AppPokeList />
   </div>
 </template>
 
