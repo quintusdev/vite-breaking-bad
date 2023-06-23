@@ -19,18 +19,31 @@ export default{
     }
   },
   mounted() {
-    /* richiamo la funzione axios e inserisco i datiS*/
-    axios.get(store.apiURL).then((response) => {
-      store.pokeList = response.data.docs;
-      store.loading = false;
-    })
+    this.getPokemon();
+  },
+  methods: {
+    getPokemon(){
+    /* Inserisco l'API url dallo store dentro una variabile */
+      let myUrl = store.apiURL;
+
+      if(store.typeValue !== ''){
+        myUrl += `?types1=${store.typeValue}`;
+      }
+
+      /* richiamo la funzione axios e inserisco i datiS*/
+      axios.get(myUrl).then((response) => {
+        store.pokeList = response.data.docs;
+        store.loading = false;
+      })
+    }
   },
 }
+
 </script>
 
 <template>
   <div>
-    <AppHeader />
+    <AppHeader @typeChange="getPokemon" />
     <AppPokeList />
   </div>
 </template>

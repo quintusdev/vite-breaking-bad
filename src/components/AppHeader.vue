@@ -1,18 +1,40 @@
 <script>
 /* importo lo store dal file store.js */
 import { store } from '../store.js';
-/* imposto il file App Select */
-import AppSelect from './AppSelect.vue';
 
 export default{
     components: {
-        AppSelect
+        
     },
     data() {
         return {
             store,
+            /* array tipologie pokemon */
+            typePoke:[
+                "Bug",
+                "Dark",
+                "Dragon",
+                "Electric",
+                "Fairy",
+                "Fighting",
+                "Fire",
+                "Flying",
+                "Ghost",
+                "Grass",
+                "Ground",
+                "Ice",
+                "Normal",
+                "Poison",
+                "Psychic",
+                "Rock",
+                "Steel",
+                "Water"
+            ]
         }
     },
+    computed:{
+
+    }
 }
 </script>
 
@@ -25,8 +47,12 @@ export default{
                 <div class="round red-bkg"></div>
                 <div class="round yl-bkg"></div>
             </div>
-            <div class="col-4 d-flex justify-content-end px-5 py-4">
-                <AppSelect />
+            <div class="col-4 d-flex justify-content-end px-3 py-5">
+                <select name="filtro" id="filtro" class="form-control" v-model="store.typeValue" @change="$emit('typeChange')">
+                    <option value="" selected>Seleziona Filtro</option>
+                    <!-- questo V-FOR mi permette di inserire gli elementi dell'array nelle option della select -->
+                    <option v-for="(type, index) in typePoke" :key="index" :value="type">{{ type }}</option>
+                </select>
             </div>
         </div>
     </div>
