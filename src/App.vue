@@ -20,6 +20,7 @@ export default{
   },
   mounted() {
     this.getPokemon();
+
   },
   methods: {
     getPokemon(){
@@ -27,16 +28,17 @@ export default{
       let myUrl = store.apiURL;
 
       if(store.typeValue !== ''){
-        myUrl += `?types1=${store.typeValue}`;
+        console.log('ciao');
+        myUrl += `?eq[type1]=${store.typeValue}`;
       }
 
       /* richiamo la funzione axios e inserisco i datiS*/
       axios.get(myUrl).then((response) => {
         store.pokeList = response.data.docs;
         store.loading = false;
-      })
-    }
-  },
+      });
+    },
+  }
 }
 
 </script>
