@@ -1,8 +1,13 @@
 <script>
 /* importo lo store dal file store.js */
 import { store } from '../store.js';
+/* imposto il file App Select */
+import AppSelect from './AppSelect.vue';
 
 export default{
+    components: {
+        AppSelect
+    },
     data() {
         return {
             store,
@@ -12,14 +17,17 @@ export default{
 </script>
 
 <template>
-    <div class="text-center d-flex justify-content-center px-2 py-2">
-        <div class="round green-bkg">
-        </div>
-        <div class="round blue-bkg">
-        </div>
-        <div class="round red-bkg">
-        </div>
-        <div class="round yl-bkg">
+    <div class="container">
+        <div class="row">
+            <div class="text-center d-flex justify-content-start px-5 py-4 col-8">
+                <div class="round blue-bkg"></div>
+                <div class="round green-bkg"></div>
+                <div class="round red-bkg"></div>
+                <div class="round yl-bkg"></div>
+            </div>
+            <div class="col-4 d-flex justify-content-end px-5 py-4">
+                <AppSelect />
+            </div>
         </div>
     </div>
 </template>
@@ -27,29 +35,34 @@ export default{
 <style lang="scss" scoped>
 @use '../styles/partials/variables' as *;
 
-    .round{
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        box-shadow: 0 0 3px 2px rgba(0,0,0,0.7);
-        margin: 20px 20px;
-        border: 1px solid white;
-    }
-
-    /* STYLE BACKGROUND */
-    .green-bkg{
-        background-color: lightgreen;
-    }
-
     .blue-bkg{
-        background-color: cornflowerblue;
+        height: 80px;
+        width: 80px;
+        border-radius: 50%;
+        border: 4px solid white;
+        background: rgb(0,45,240);
+        background: linear-gradient(297deg, rgba(0,45,240,1) 28%, rgba(255,255,255,1) 100%);
     }
 
-    .red-bkg{
-        background-color: red;
+    .yl-bkg, .green-bkg, .red-bkg {
+        height: 40px;
+        width: 40px;
+        border-radius: 50%;
+        border: 4px solid white;
     }
 
     .yl-bkg{
-        background-color: yellow;
+        background: rgb(226,240,0);
+        background: linear-gradient(297deg, rgba(226,240,0,1) 28%, rgba(255,255,255,1) 90%);
+    }
+
+    .green-bkg{
+        background: rgb(12,175,11);
+        background: linear-gradient(297deg, rgba(12,175,11,1) 28%, rgba(255,255,255,1) 90%);
+    }
+
+    .red-bkg{
+        background: rgb(240,0,0);
+        background: linear-gradient(297deg, rgba(240,0,0,1) 28%, rgba(255,255,255,1) 90%);
     }
 </style>
