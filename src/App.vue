@@ -20,7 +20,6 @@ export default{
   },
   mounted() {
     this.getPokemon();
-
   },
   methods: {
     getPokemon(){
@@ -28,7 +27,6 @@ export default{
       let myUrl = store.apiURL;
 
       if(store.typeValue !== ''){
-        console.log('ciao');
         myUrl += `?eq[type1]=${store.typeValue}`;
       }
 
