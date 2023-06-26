@@ -53,7 +53,6 @@ export default{
                     <!-- questo V-FOR mi permette di inserire gli elementi dell'array nelle option della select -->
                     <option v-for="(type, index) in typePoke" :key="index" :value="type">{{ type }}</option>
                 </select>
-                <button type="button" class="btn btn-warning btn-sm p-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Reset Filtro</button>
             </div>
         </div>
     </div>
