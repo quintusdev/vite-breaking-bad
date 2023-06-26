@@ -47,12 +47,13 @@ export default{
                 <div class="round red-bkg"></div>
                 <div class="round yl-bkg"></div>
             </div>
-            <div class="col-4 d-flex justify-content-end px-3 py-5">
+            <div class="col-4 d-flex justify-content-end px-5 py-5">
                 <select name="filtro" id="filtro" class="form-control" v-model="store.typeValue" @change="$emit('typeChange')">
                     <option value="" selected>Seleziona Filtro</option>
                     <!-- questo V-FOR mi permette di inserire gli elementi dell'array nelle option della select -->
                     <option v-for="(type, index) in typePoke" :key="index" :value="type">{{ type }}</option>
                 </select>
+                <button type="button" class="btn btn-warning btn-sm p-2" style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">Reset Filtro</button>
             </div>
         </div>
     </div>

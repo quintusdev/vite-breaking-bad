@@ -3,20 +3,26 @@
 import { store } from '../store';
 
 export default {
-    props:{
-        myPokemon: Object
-    },
     data() {
         return {
             store,
         }
     },
+    props:{
+        myPokemon: Object,
+    },
+    computed:{
+        colorCard(){
+            return store.colorMap[this.myPokemon.type1];
+        }
+    },
+    
 }
 </script>
 
 <template>
     <!-- Operatore ternario per impostare lo sfondo della card in base al tipo di pokemon -->
-    <div class="d-flex text-center card my-2 p-auto align-items-center" :class="myPokemon.type1 === 'Grass' ? 'green-bkg' : myPokemon.type1 === 'Water' ? 'blue-bkg' : myPokemon.type1 === 'Fire' ? 'red-bkg' : ''">
+    <div class="d-flex text-center card my-2 p-auto align-items-center" :style="{'background-color': colorCard}">
         <!-- Inserimento contenuti nelle card prendendo gli elementi dalla API -->
         <img class="m-3" :src="myPokemon.imageUrl" alt="pokemon.name">
         <h6> {{ myPokemon.number }}</h6>   

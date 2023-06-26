@@ -2,13 +2,15 @@
 /* importo il file pokemon card */
 import AppPokeCard from './AppPokeCard.vue';
 import AppLoader from './AppLoader.vue';
+import AppResult from './AppResult.vue';
 /* importo lo store dal file store.js */
 import { store } from '../store';
 
 export default {
     components:{
         AppPokeCard,
-        AppLoader
+        AppLoader,
+        AppResult
     },
     data() {
         return {
@@ -26,6 +28,7 @@ export default {
                 <div v-for="(pokemon, index) in store.pokeList" :key="index" class="d-flex col-6 col-md-4 col-lg-3 min">
                     <AppPokeCard :myPokemon="pokemon"/>
                 </div>
+                <AppResult />
             </div>
             <AppLoader v-else/>
         </div>
