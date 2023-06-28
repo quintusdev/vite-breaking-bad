@@ -3,9 +3,6 @@
 import { store } from '../store.js';
 
 export default{
-    components: {
-        
-    },
     data() {
         return {
             store,
@@ -32,9 +29,6 @@ export default{
             ]
         }
     },
-    computed:{
-
-    }
 }
 </script>
 
