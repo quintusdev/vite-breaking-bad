@@ -4,7 +4,7 @@ import AppPokeCard from './AppPokeCard.vue';
 import AppLoader from './AppLoader.vue';
 import AppResult from './AppResult.vue';
 /* importo lo store dal file store.js */
-import { store } from '../store';
+import { store } from '../store.js';
 
 export default {
     components:{
